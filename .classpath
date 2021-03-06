@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="lib/bcpkix-jdk15on-1.68.jar"/>
 	<classpathentry kind="lib" path="lib/bcprov-jdk15on-1.68.jar"/>
 	<classpathentry kind="lib" path="lib/byte-buddy-1.8.15.jar"/>
-	<classpathentry kind="lib" path="lib/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="lib/client-combined-3.141.59.jar" sourcepath="lib/client-combined-3.141.59.jar"/>
 	<classpathentry kind="lib" path="lib/client-combined-3.141.59-sources.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.15.jar"/>
 	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>

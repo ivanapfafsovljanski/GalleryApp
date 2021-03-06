@@ -14,7 +14,7 @@ public class LoginTest extends BeginningClass{
 		driver.navigate().to("https://gallery-app.vivifyideas.com");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		
-		pageHome.clickLoginBtn();
+		pageAllGaleries.clickLoginBtn();
 	}
 
 	//@Test
@@ -41,6 +41,7 @@ public class LoginTest extends BeginningClass{
 		Assert.assertEquals(pageLogin.badCredentialsMsg(), readFromExcel.taxtualValue("LogIN", 17, 4));
 	}
 	//@Test
+	//pada - izbrisati
 	public void loginSpaceInFrontPsw() {
 		pageLogin.spaceInfrontOfPsw();
 		pageLogin.submitLoginData();
