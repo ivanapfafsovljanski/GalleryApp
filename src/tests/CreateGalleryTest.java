@@ -3,6 +3,7 @@ package tests;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class CreateGalleryTest extends BeginningClass{
 		pageAllGaleries.clickCreateGalery();
 	}
 	
-	//@Test
+	@Test (priority = 1)
 	public void creatingGallery() {
 		pageCreateGallery.createNewGallery();
 		pageCreateGallery.clickSubmitBtn();
@@ -31,14 +32,22 @@ public class CreateGalleryTest extends BeginningClass{
 		pageCreateGallery.clickSubmitBtn();
 		Assert.assertTrue(pageAllGaleries.assertNewGalleryNoDescription());
 	}
-	@Test
+	//@Test
 	public void createGalleryMultipleImages() {
 		pageCreateGallery.newGalleryMultipleImages();
 		pageCreateGallery.clickSubmitBtn();
 		Assert.assertTrue(pageAllGaleries.assertNewGalleryMultipleImages());
 	}
-	
-	//@AfterMethod
+	@Test (priority = 2)
+	public void findMyGallery() throws InterruptedException {
+		Thread.sleep(1000);
+		pageAllGaleries.clickMyGallery();
+		pageMyGallery.viewMyGallery();
+		pageMyGallery.clickOnCreatedGallery();
+		Thread.sleep(1000);
+		Assert.assertTrue(pageMyGallery.assertMyGallery());
+	}
+	@AfterMethod
 		public void afterMethod() {
 			pageAllGaleries.logout();
 	}

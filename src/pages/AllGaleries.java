@@ -43,5 +43,7 @@ public class AllGaleries {
 	public boolean assertNewGalleryMultipleImages() {
 		return driver.findElement(By.partialLinkText(readFromExcel.taxtualValue("CreateGallery", 25, 3))).isDisplayed();
 	}
-	
+	public void clickMyGallery() {
+		driver.findElement(By.partialLinkText("My Galleries")).click();
+	}
 }

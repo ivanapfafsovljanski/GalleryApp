@@ -9,7 +9,9 @@ import org.testng.annotations.BeforeClass;
 
 import pages.AllGaleries;
 import pages.CreateGalleryPage;
+import pages.LogOutPage;
 import pages.LoginPage;
+import pages.MyGalleryPage;
 
 public class BeginningClass {
 	WebDriver driver;
@@ -18,6 +20,8 @@ public class BeginningClass {
 	AllGaleries pageAllGaleries;
 	LoginPage pageLogin;
 	CreateGalleryPage pageCreateGallery;
+	MyGalleryPage pageMyGallery;
+	LogOutPage pageLogOut;
 	
 	
 	@BeforeClass
@@ -31,6 +35,8 @@ public class BeginningClass {
 		this.pageAllGaleries = new AllGaleries(driver, js, readFromExcel);
 		this.pageLogin = new LoginPage(driver, readFromExcel);
 		this.pageCreateGallery = new CreateGalleryPage(driver, readFromExcel);
+		this.pageMyGallery = new MyGalleryPage(driver, pageAllGaleries, readFromExcel);
+		this.pageLogOut = new LogOutPage(driver, readFromExcel);
 		
 		driver.manage().window().maximize();	
 	}
