@@ -52,13 +52,6 @@ public class LoginPage {
 		pswField.clear();
 		pswField.sendKeys(readFromExcel.taxtualValue("LogIN", 24, 3));
 	}
-	public void spaceInfrontOfPsw() {
-		emailField  = driver.findElement(By.id("email"));
-		emailField.clear();
-		emailField.sendKeys(readFromExcel.taxtualValue("LogIN", 32, 3));
-		pswField = driver.findElement(By.id("password"));
-		pswField.clear();
-		pswField.sendKeys(readFromExcel.taxtualValue("LogIN", 34, 3));
-	}
+	
 	
 }

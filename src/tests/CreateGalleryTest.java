@@ -26,13 +26,13 @@ public class CreateGalleryTest extends BeginningClass{
 		pageCreateGallery.clickSubmitBtn();
 		Assert.assertTrue(pageAllGaleries.galleryCreatedAssert());
 	}
-	//@Test
+	@Test
 	public void creatingGalleryNoDescription() {
 		pageCreateGallery.newGalleryNoDescription();
 		pageCreateGallery.clickSubmitBtn();
 		Assert.assertTrue(pageAllGaleries.assertNewGalleryNoDescription());
 	}
-	//@Test
+	@Test
 	public void createGalleryMultipleImages() {
 		pageCreateGallery.newGalleryMultipleImages();
 		pageCreateGallery.clickSubmitBtn();

@@ -19,7 +19,8 @@ public class AllGaleries {
 		this.readFromExcel = readFromExcel;
 	}
 	public void clickLoginBtn() {
-		driver.findElement(By.partialLinkText("Login")).click();
+		driver.findElement(By.partialLinkText("Login")).click();	
+		
 	}
 	public void clickCreateGalery() {
 		driver.findElement(By.partialLinkText("Create Gallery")).click();

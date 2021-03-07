@@ -31,12 +31,7 @@ public class ExcelReader {
 			cell = row.getCell(cellNo);
 			return cell.getStringCellValue();
 		}
-		public int numericValue(String sheetName, int rowNo, int cellNo) {
-			sheet = wb.getSheet(sheetName);
-			row = sheet.getRow(rowNo);
-			cell = row.getCell(cellNo);
-			return (int) cell.getNumericCellValue();
-		}
+		
 		
 
 }

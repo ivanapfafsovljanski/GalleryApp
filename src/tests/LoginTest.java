@@ -3,10 +3,9 @@ package tests;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import pages.LoginPage;
 
 public class LoginTest extends BeginningClass{
 	@BeforeMethod
@@ -17,39 +16,25 @@ public class LoginTest extends BeginningClass{
 		pageAllGaleries.clickLoginBtn();
 	}
 
-	//@Test
+	@Test
 	public void validLogin() {
 		pageLogin.loginValid();
 		pageLogin.submitLoginData();
 		Assert.assertTrue(pageAllGaleries.logoutBtnIsPresent());
+		pageAllGaleries.logout();
 	}
-	//@Test 
-	public void emptyCredentials() {
-		pageLogin.submitLoginData();
-		
-	}
-	//@Test
+	
+	@Test
 	public void loginWrongEmail() {
 		pageLogin.loginWrongEmail();
 		pageLogin.submitLoginData();
 		Assert.assertEquals(pageLogin.badCredentialsMsg(), readFromExcel.taxtualValue("LogIN", 17, 4));
 	}
-	//@Test
+	@Test
 	public void loginWrongPsw() {
 		pageLogin.loginWrongPsw();
 		pageLogin.submitLoginData();
 		Assert.assertEquals(pageLogin.badCredentialsMsg(), readFromExcel.taxtualValue("LogIN", 17, 4));
 	}
-	//@Test
-	//pada - izbrisati
-	public void loginSpaceInFrontPsw() {
-		pageLogin.spaceInfrontOfPsw();
-		pageLogin.submitLoginData();
-		Assert.assertTrue(pageAllGaleries.logoutBtnIsPresent());
-	}
 	
-	//@AfterMethod
-	public void afterMethod() {
-		pageAllGaleries.logout();
-	}
 }
